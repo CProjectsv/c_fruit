@@ -27,8 +27,6 @@ class Product extends BaseController
     }
     public function AddProduct()
     {
-
-
             $data = [
             'id_komoditi' => '',
             'nama_komoditi' => $this->request->getPost('nama_komoditi'),
@@ -67,6 +65,14 @@ class Product extends BaseController
                 session()->setFlashdata('message','Diubah');
                 return redirect()->to(base_url('/product'));
             }
+    }
+
+    public function GetProductChart(){
+        $success = $this->model->GetProductChart();
+            if ($success) {
+                return redirect()->to(base_url('/product'));
+            }
+        
     }
     
         

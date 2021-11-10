@@ -20,6 +20,17 @@ class M_Product extends Model
         
     }
 
+    public function getProductChart()
+    {
+        $builder = $this->db->table('komoditi');
+        $builder->select('nama_komoditi, jumlah');
+        $result = $builder->get()->getResultArray();
+        dd($result);
+        return $result;
+        
+    }
+
+
     public function addDataProduct($data)
     {
         return $this->db->table('komoditi')->insert($data);
