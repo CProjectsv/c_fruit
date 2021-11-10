@@ -20,14 +20,39 @@ class M_Product extends Model
         
     }
 
-    public function getProductChart()
+    public function GetProductChart()
     {
         $builder = $this->db->table('komoditi');
-        $builder->select('nama_komoditi, jumlah');
+        $builder->select('nama_komoditi as label, jumlah as value');
         $result = $builder->get()->getResultArray();
-        dd($result);
         return $result;
-        
+    }
+
+    public function getProductChart2(){
+            $host = 'localhost';
+            $username = 'root';
+            $password = '';
+            $db_name = 'komoditas';
+
+            $conn = mysqli_connect($host, $username, $password, $db_name) or die('Connection failed.');
+
+            $hsl = mysqli_query($conn, "SELECT * FROM komoditi");
+            
+            $d = array();
+            while ($rcrd = mysqli_fetch_assoc($hsl)){
+                array_push($d, array("label"=>$rcrd['nama_komoditi'], "value" => $rcrd['jumlah']));
+            }
+
+            $c = array( "caption"=> "Pemasukan Komoditas",
+                    "subCaption"=>"Komoditas Pangan",
+                    "xAxisName"=>"Nama Komoditi",
+                    "yAxisName"=>"Jumlah",
+                    "theme"=>"fint");
+
+            $gab = array("chart"=>$c, "data"=>$d);   
+            $j = json_encode($gab);
+            dd($j);
+            echo $j;
     }
 
 

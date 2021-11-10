@@ -17,6 +17,26 @@
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    
+    <script type="text/javascript" src="assets/js/fusioncharts.js"></script>
+    <script type="text/javascript">
+        FusionCharts.ready(function () {
+        var G1 = new FusionCharts({
+            type: "column2d",
+            renderAt: "chartLocation",
+            width: "800",
+            height: "300",
+            dataFormat: "jsonurl",
+            dataSource: "/productChart",
+        });
+        G1.render();
+        });
+    </script>
+    <script
+      type="text/javascript"
+      src="assets/js/themes/fusioncharts.theme.fint.js"
+    ></script>
+
 </head>
 
 <body id="page-top">

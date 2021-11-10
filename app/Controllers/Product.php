@@ -68,13 +68,21 @@ class Product extends BaseController
     }
 
     public function GetProductChart(){
-        $success = $this->model->GetProductChart();
-            if ($success) {
-                return redirect()->to(base_url('/product'));
-            }
+
+        $data = $this->model->GetProductChart();
+        if ($data) {
+            $c = array( "caption"=> "Pemasukan Komoditas",
+            "subCaption"=>"Komoditas Pangan",
+            "xAxisName"=>"Nama Komoditi",
+            "yAxisName"=>"Jumlah",
+            "theme"=>"fint");
+
+            $gab = array("chart"=>$c, "data"=>$data);   
+            $j = json_encode($gab);
+            echo $j;
+        }
         
     }
-    
         
         
 
