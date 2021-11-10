@@ -42,6 +42,15 @@ class Product extends BaseController
                 return redirect()->to(base_url('/product'));
             }
     }
+
+    public function DeleteProduct($id){
+        $success = $this->model->deleteProductById($id);
+            if ($success) {
+                session()->setFlashdata('message','Dihapus');
+                return redirect()->to(base_url('/product'));
+            }
+        
+    }
         
         
 

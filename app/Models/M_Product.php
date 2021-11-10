@@ -22,4 +22,8 @@ class M_Product extends Model
     {
         return $this->db->table('komoditi')->insert($data);
     }
+    public function deleteProductById($id)
+    {
+        return $this->db->table('komoditi')->delete(['id_komoditi'=> $id]);
+    }
 }

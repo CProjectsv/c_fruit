@@ -37,15 +37,26 @@
                                             <th>ID Komoditi</th>
                                             <th>Nama Komoditi</th>
                                             <th>Stok</th>
+                                            <th>Opsi</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                         <?php foreach ($product as $row) : ?>
                                             <tr>
-                                                <td><?= $row['id_komoditi']; ?></td>
+                                                <td scope="row"><?= $row['id_komoditi']; ?></td>
                                                 <td><?= $row['nama_komoditi']; ?></td>
                                                 <td><?= $row['jumlah']; ?></td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-primary" href="#<?= $row['id_komoditi']; ?>" data-toggle="modal" data-target="#" onclick="$('#').attr('href','product/edit/<?= $row['id_komoditi']; ?>')">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+
+                                                    <a class="btn btn-sm btn-danger" href="#<?= $row['id_komoditi']; ?>" data-toggle="modal" data-target="#modalhapus" onclick="$('#deleteProduct').attr('href','product/delete/<?= $row['id_komoditi']; ?>')">
+                                                        <i class="fa fa-trash-alt"></i>
+                                                    </a>
+
+                                                </td>
 
                                             </tr>
                                         <?php endforeach ?>
@@ -58,6 +69,10 @@
                 </div>
                 <!-- /.container-fluid -->
 
+            </div>
+            <!-- End of Main Content -->
+
+
             <!-- Modal -->
             <div class="modal fade" id="modelId">
                 <div class="modal-dialog" role="document">
@@ -69,27 +84,39 @@
                                 </button>
                         </div>
                         <div class="modal-body">
-                    <form action="<?= base_url('addProduct'); ?>" method="post">
-                        <div class="form-group mb-0">
-                            <label for="nama_komoditi"></label>
-                            <input type="text" name="nama_komoditi" id="" class="form-control" placeholder="Masukkan nama produk">
-                        </div>
-                        <div class="form-group mb-0">
-                            <label for="jumlah"></label>
-                            <input type="text" name="jumlah" id="" class="form-control" placeholder="Masukkan stok">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary btn-sm">Tambah Data</button>
+                            <form action="<?= base_url('addProduct'); ?>" method="post">
+                                <div class="form-group mb-0">
+                                    <label for="nama_komoditi"></label>
+                                    <input type="text" name="nama_komoditi" id="" class="form-control" placeholder="Masukkan nama produk">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <label for="jumlah"></label>
+                                    <input type="text" name="jumlah" id="" class="form-control" placeholder="Masukkan stok">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Tambah Data</button>
+                                </div>
+                                
+                            </form>
                         </div>
                     </div>
-                    </form>
                 </div>
             </div>
 
-
-
-
+            
+            <!-- Hapus Modal-->
+            <div class="modal fade" id="modalhapus">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">Apakah anda yakin menghapus user ini ?</div>
+                        <div class="modal-footer">
+                            <a class="btn btn-warning" data-dismiss="modal">Cancel</a>
+                            <a class="btn btn-primary btn-ok" id="deleteProduct">Yakin</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- End of Main Content -->
+             
 
+             
