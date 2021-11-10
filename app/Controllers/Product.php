@@ -38,8 +38,8 @@ class Product extends BaseController
             //insert data 
             $success = $this->model->addDataProduct($data);
             if ($success) {
-            session()->setFlashdata('message','Ditambahkan');
-            return redirect()->to(base_url('product'));
+                session()->setFlashdata('message','Ditambahkan');
+                return redirect()->to(base_url('/product'));
             }
     }
         
