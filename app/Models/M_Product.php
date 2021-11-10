@@ -6,10 +6,12 @@ use CodeIgniter\Model;
 
 class M_Product extends Model
 {
+    protected $table = 'product';
 
     public function __construct()
     {
         $this->db= db_connect();
+        $this->builder= $this->db->table($this->table);
     }
 
     public function getAllData()
@@ -25,5 +27,9 @@ class M_Product extends Model
     public function deleteProductById($id)
     {
         return $this->db->table('komoditi')->delete(['id_komoditi'=> $id]);
+    }
+    public function editProductDataById($data, $id_komoditi)
+    {
+        return $this->db->table('komoditi')->update($data,['id_komoditi'=>$id_komoditi]);
     }
 }

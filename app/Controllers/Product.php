@@ -32,7 +32,7 @@ class Product extends BaseController
             $data = [
             'id_komoditi' => '',
             'nama_komoditi' => $this->request->getPost('nama_komoditi'),
-            'jumlah'=> $this->request -> getPost('jumlah')
+            'jumlah'=> $this->request -> getPost('jumlah_komoditi')
             ];
 
             //insert data 
@@ -51,6 +51,24 @@ class Product extends BaseController
             }
         
     }
+    public function editProduct()
+    {
+
+            $id_komoditi = $this->request->getPost('id_komoditi');
+            $data = [
+            'id_komoditi' => $id_komoditi,
+            'nama_komoditi' => $this->request->getPost('nama_komoditi'),
+            'jumlah'=> $this->request -> getPost('jumlah_komoditi')
+            ];
+
+            //update data 
+            $success = $this->model->editProductDataById($data, $id_komoditi);
+            if ($success) {
+                session()->setFlashdata('message','Diubah');
+                return redirect()->to(base_url('/product'));
+            }
+    }
+    
         
         
 

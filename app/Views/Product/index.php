@@ -48,7 +48,10 @@
                                                 <td><?= $row['nama_komoditi']; ?></td>
                                                 <td><?= $row['jumlah']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-primary" href="#<?= $row['id_komoditi']; ?>" data-toggle="modal" data-target="#" onclick="$('#').attr('href','product/edit/<?= $row['id_komoditi']; ?>')">
+                                                    <a class="btn btn-sm btn-primary"  id="btn-edit" data-toggle="modal" data-target="#modaledit" name="btn-edit" id="btn-edit<?= $row['id_komoditi'] ?>" 
+                                                    data-id="<?= $row['id_komoditi'];?>" 
+                                                    data-nama="<?= $row['nama_komoditi']; ?>" 
+                                                    data-jumlah="<?= $row['jumlah'];?>">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
 
@@ -72,8 +75,39 @@
             </div>
             <!-- End of Main Content -->
 
+            <!-- Modal Edit Data -->
+            <div class="modal fade" id="modaledit">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit <?= $judul; ?></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="<?= base_url('editProduct'); ?>" method="post">
+                                <input type="hidden" name="id_komoditi" id="id_komoditi" class="form-control" >
+                                <div class="form-group mb-0">
+                                    <label for="nama_komoditi"></label>
+                                    <input type="text" name="nama_komoditi" id="nama_komoditi" class="form-control" placeholder="Masukkan nama produk" >
+                                </div>
+                                <div class="form-group mb-0">
+                                    <label for="jumlah"></label>
+                                    <input type="text" name="jumlah_komoditi" id="jumlah_komoditi" class="form-control" placeholder="Masukkan stok">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary btn-sm"id ="editProduct">Simpan</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Modal -->
+            <!-- Modal Tambah Data -->
             <div class="modal fade" id="modelId">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -91,7 +125,7 @@
                                 </div>
                                 <div class="form-group mb-0">
                                     <label for="jumlah"></label>
-                                    <input type="text" name="jumlah" id="" class="form-control" placeholder="Masukkan stok">
+                                    <input type="text" name="jumlah_komoditi" id="" class="form-control" placeholder="Masukkan stok">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Tutup</button>
@@ -109,7 +143,7 @@
             <div class="modal fade" id="modalhapus">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
-                        <div class="modal-body">Apakah anda yakin menghapus user ini ?</div>
+                        <div class="modal-body">Apakah anda yakin menghapus data ini ?</div>
                         <div class="modal-footer">
                             <a class="btn btn-warning" data-dismiss="modal">Cancel</a>
                             <a class="btn btn-primary btn-ok" id="deleteProduct">Yakin</a>
@@ -119,4 +153,3 @@
             </div>
              
 
-             

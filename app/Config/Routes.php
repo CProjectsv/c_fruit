@@ -34,7 +34,9 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/product', 'product::index');
 $routes->match(['post'], '/addProduct', 'product::AddProduct');
+$routes->match(['post'], '/editProduct', 'product::editProduct');
 $routes->match(['get','post'], '/product/delete/(:any)', 'product::DeleteProduct/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
