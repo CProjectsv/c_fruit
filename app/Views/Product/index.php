@@ -9,7 +9,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            Data produk berhasil<strong><?= session()->getFlashdata('message'); ?></strong> 
+                            Data produk berhasil <strong><?= session()->getFlashdata('message'); ?></strong> 
                         </div>
                     <?php endif; ?>
                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
@@ -69,7 +69,7 @@
                                 </button>
                         </div>
                         <div class="modal-body">
-                    <form action="<?= base_url('product/add'); ?>" method="post">
+                    <form action="<?= base_url('addProduct'); ?>" method="post">
                         <div class="form-group mb-0">
                             <label for="nama_komoditi"></label>
                             <input type="text" name="nama_komoditi" id="" class="form-control" placeholder="Masukkan nama produk">
