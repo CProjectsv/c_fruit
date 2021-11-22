@@ -37,6 +37,9 @@ $routes->match(['post'], '/addProduct', 'product::AddProduct');
 $routes->match(['post'], '/editProduct', 'product::editProduct');
 $routes->match(['get','post'], '/productChart', 'product::GetProductChart');
 $routes->match(['get','post'], '/product/delete/(:any)', 'product::DeleteProduct/$1');
+$routes ->resource('user');
+
+
 
 /*
  * --------------------------------------------------------------------
