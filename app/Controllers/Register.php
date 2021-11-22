@@ -3,17 +3,17 @@ namespace App\Controllers;
 
 use App\Models\M_Login;
 
-class Login extends BaseController
+class Register extends BaseController
 {
     public function index()
         {
 
             $data = [
-                'judul' => 'Login C-Fruit',
+                'judul' => 'Register C-Fruit',
             ];
 
             
-            echo view('auth/login',$data);
+            echo view('auth/register',$data);
 
         }
 }

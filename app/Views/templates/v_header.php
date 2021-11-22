@@ -24,7 +24,7 @@
         var G1 = new FusionCharts({
             type: "column2d",
             renderAt: "chartLocation",
-            width: "800",
+            width: "100%",
             height: "300",
             dataFormat: "jsonurl",
             dataSource: "/productChart",

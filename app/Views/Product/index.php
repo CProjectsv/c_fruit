@@ -12,19 +12,16 @@
                             Data produk berhasil <strong><?= session()->getFlashdata('message'); ?></strong> 
                         </div>
                     <?php endif; ?>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <!-- <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6> -->
                             <div class="d-sm-flex align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Komoditas</h6>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary btn-sm shadow-sm" data-toggle="modal" data-target="#modelId">
-                            <i class="fas fa-plus-circle fa-sm text-white-50"></i> Tambah Produk
+                            <i class="fas fa-plus-circle fa-sm text-white-50"></i> Tambah Komoditas
                             </button>
                             
                         </div>
