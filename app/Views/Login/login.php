@@ -19,7 +19,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" action="<?= base_url('login'); ?>" method="post" >
+                                    <form class="user" action="<?= base_url('/'); ?>" method="post" >
                                         <?php if (session()->get('message')): ?>
                                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -44,9 +44,7 @@
                                         
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
+                                    
                                     <div class="text-center">
                                         <a class="small" href="Register">Create an Account!</a>
                                     </div>

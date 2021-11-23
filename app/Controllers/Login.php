@@ -36,17 +36,17 @@ class Login extends BaseController
         if(isset($userDat)){
             // check password
             if($data["password"] == $userDat["password"] && $data){
-                return redirect()->to('/');
+                return redirect()->to('/dashboard');
             }
             else{
                 session()->setFlashdata('message','Password salah');
-                return redirect()->to(base_url('/login'));
+                return redirect()->to(base_url('/'));
 
             }
         }
         else{
             session()->setFlashdata('message','Username tidak ditemukan');
-                return redirect()->to(base_url('/login'));
+                return redirect()->to(base_url('/'));
         }
 
     }
