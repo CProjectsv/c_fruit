@@ -1,4 +1,4 @@
-<?= $this->extend('Auth/templates/index.php'); ?>
+<?= $this->extend('Login/templates/index.php'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -19,26 +19,28 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" action="<?= base_url('login'); ?>" method="post" >
+                                        <?php if (session()->get('message')): ?>
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                Login gagal <strong><?= session()->getFlashdata('message'); ?></strong> 
+                                            </div>
+                                        <?php endif; ?>
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="username" required name="username" class="form-control form-control-user"
+                                                id="inputUsername" aria-describedby="usernameHelp"
+                                                placeholder="Enter Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" required name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
-                                        </a>
+                                        </button>
                                         
                                     </form>
                                     <hr>
