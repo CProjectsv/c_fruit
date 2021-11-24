@@ -35,15 +35,15 @@ $routes->get('/dashboard', 'Home::index');
 $routes->get('/product', 'Product::index');
 $routes->match(['post'], '/addProduct', 'Product::AddProduct');
 $routes->match(['post'], '/editProduct', 'Product::editProduct');
-$routes->match(['get','post'], '/productChart', 'Product::GetProductChart');
-$routes->match(['get','post'], '/product/delete/(:any)', 'Product::DeleteProduct/$1');
 $routes ->resource('user');
-
 $routes->get('/', 'Login::index');
 $routes->post('/', 'Login::doLogin');
-
 $routes->get('/register', 'Register::index');
+$routes->get('/downloadpdf', 'Product::DownloadPDF');
+$routes->match(['get','post'], '/exportexcel', 'Product::DownloadXLS');
 $routes->match(['get','post'], '/register', 'Register::doRegister');
+$routes->match(['get','post'], '/productChart', 'Product::GetProductChart');
+$routes->match(['get','post'], '/product/delete/(:any)', 'Product::DeleteProduct/$1');
 
 
 

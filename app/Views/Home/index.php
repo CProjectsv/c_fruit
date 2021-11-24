@@ -6,9 +6,8 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         <div class="row align-items-right ">
-                            <a href="pdf/komoditi_pdf.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm kiri mr-4" ><i
-                                class="fas fa-download fa-sm text-white-50"></i> Unduh PDF</a>
-                        <a href="spreadsheet/read_komoditi.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            <a href="downloadpdf" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mr-4" ><i class="fas fa-download fa-sm text-white-50"></i> Unduh PDF</a>
+                            <a href="exportexcel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Unduh Excel</a>
                         </div>       
                     </div>
