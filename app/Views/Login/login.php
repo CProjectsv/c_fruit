@@ -17,7 +17,8 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        <i class="fas fa-seedling"></i>
+                                        <h1 class="h4 text-gray-900 mb-4">C-FRUIT</h1>
                                     </div>
                                     <form class="user" action="<?= base_url('/'); ?>" method="post" >
                                         <?php if (session()->get('message')): ?>
