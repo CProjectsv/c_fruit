@@ -32,18 +32,18 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/dashboard', 'Home::index');
-$routes->get('/product', 'product::index');
-$routes->match(['post'], '/addProduct', 'product::AddProduct');
-$routes->match(['post'], '/editProduct', 'product::editProduct');
-$routes->match(['get','post'], '/productChart', 'product::GetProductChart');
-$routes->match(['get','post'], '/product/delete/(:any)', 'product::DeleteProduct/$1');
+$routes->get('/product', 'Product::index');
+$routes->match(['post'], '/addProduct', 'Product::AddProduct');
+$routes->match(['post'], '/editProduct', 'Product::editProduct');
+$routes->match(['get','post'], '/productChart', 'Product::GetProductChart');
+$routes->match(['get','post'], '/product/delete/(:any)', 'Product::DeleteProduct/$1');
 $routes ->resource('user');
 
-$routes->get('/', 'login::index');
-$routes->post('/', 'login::doLogin');
+$routes->get('/', 'Login::index');
+$routes->post('/', 'Login::doLogin');
 
-$routes->get('/register', 'register::index');
-$routes->match(['get','post'], '/register', 'register::doRegister');
+$routes->get('/register', 'Register::index');
+$routes->match(['get','post'], '/register', 'Register::doRegister');
 
 
 

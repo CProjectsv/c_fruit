@@ -21,7 +21,7 @@ class Product extends BaseController
         echo view('templates/v_header', $data);
         echo view('templates/v_sidebar');
         echo view('templates/v_topbar');
-        echo view('product/index'); 
+        echo view('Product/index'); 
         echo view('templates/v_footer');
 
     }
